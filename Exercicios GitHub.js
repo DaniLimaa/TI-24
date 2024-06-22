@@ -137,3 +137,55 @@ else if (operacao == '*'){
 }
 
 //8-crie um programa que determina se o ano é bissexto
+
+ano = 2024
+function bissexto (ano){
+    return (ano % 4 == 0 && (ano %100 !== 0 || ano % 400 === 0) )
+}
+if (bissexto (ano)){
+    console.log (ano + ' é um ano bissexto')
+}
+else {
+    console.log(ano, 'nao é bissexto')
+}
+
+console.log()
+
+//10- escreva um programa que leia o peso e a altura de uma pessoa e calcule eu IMC, informando se esta abaixo do peso, no ppeso normal, acima do peso ou obeso
+
+peso = 150
+altura = 1.80
+imc = peso / (altura * altura)
+
+if (imc <= 18.5){
+    console.log(peso / (altura * altura))
+    console.log("abaixo do peso")
+} 
+else if(imc > 18.5 && imc <= 25){
+    console.log(peso / (altura * altura))
+    console.log("peso normal")
+} 
+else if(imc > 25){
+    console.log(peso / (altura * altura))
+    console.log("acima do peso")
+}
+
+console.log()
+
+//11- escreva um programa que leia um mes do ano e informe quantos dias ele tem
+
+mes = 'fevereiro'
+
+if (mes == 'abril'|| mes == 'junho'|| mes == 'setembro'|| mes == 'novembro'){
+    console.log ('o mes de ' + mes, 'tem 30 dias')
+}
+else if (mes == 'janeiro'|| mes == 'marco'|| mes == 'maio'|| mes == 'julho'|| mes == 'agosto'|| mes == 'outubro'|| mes == 'dezembro'){
+    console.log (' o mes de ' + mes, 'tem 31 dias')
+}
+else if (mes == 'fevereiro'){
+    console.log('o mes de ' + mes, 'tem 28 dias')
+}
+
+console.log()
+
+//12- Faça um programa que verifique se um trianguço é equilatero, isoceles ou escaleno com base nos comprimentos de seus lados
