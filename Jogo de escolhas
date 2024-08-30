@@ -1,81 +1,97 @@
 <script>
-function portaMisteriosa(){
-    alert('Você entrou em uma sala')
-    console.log('Você encontrou um bau misterioso e nesse bau havia 3 itens uma espada, longa e dourada, uma armadura, linda e relusente com as estrelas, e uma poção misteriosa vermelha com bolhas que saiam de dentro do liquido')
-    escolhaItem = prompt('Qual item você gostaria de pegar pegar primeiro: \n1- espada longa e dourada \n2- armadura linda e relusente com as estrelas \n3- poção misteriosa vermelha com bolhas que saiam de dentro do liquido. qual você escolhe? ')
-    
-    while (escolhaItem < 1 || escolhaItem > 3){
-        escolhaItem = prompt('Irmão você ta brincando com o sistema? escolhe um item direito, se não você vai ficar sem nada\n\n1- espada longa e dourada \n2- armadura linda e relusente como as estrelas \n3- poção misteriosa vermelha com bolhas que saem de dentro do liquido')
+function corredorEstreito(){
+    alert('Você continou pelo corredor estreito')
+    console.log('Ao caminhar um pouco pelo corredor vai aparecendo armaduras antigas e em uma delas havia uma espada enferrujada')
+    escolhaEspada = prompt('Você deseja pegar a espada enferrujada? (você pode se ferir coma as ferrugens) \n1- Pegar a espada \n2- Não pegar a espada')
+
+    while (escolhaEspada <  1 || escolhaEspada > 2){
+        escolhaEspada = prompt('Esolhe direito ai comédia \n1- Pegar a espada \n2- Ignorar a espada')
     }
 
-console.log('Ao escolher o item, todo o bau se fechou e você não conseguiu mais abrir ele para pegar o restante ddos itens')
-
-    return escolhaItem
+    return escolhaEspada
 }
 
-function corredorEscuro() {
-    alert('Você entrou no corredor escuro, que coragem!')
-    console.log('Ao adentar no corredor você sente um arrepio na espinha, um pressentimento nem um pouco bom. Até que todas as tochas do corredor forão se acendendo e iluminando o caminho, e ao final do corredor você avista uma estatua de um golem de pedra congelado, atras desse golem havia uma porta de madeira gigante, ao chegar perto do golem ele acorda e não estava nem um pouco feliz')
+function grandePortaAzul(){
+    alert('Você entrou pela porta')
+    console.log('Você fica levemente cansado depois de empurrar a grande e pesada porta')
+    console.log('Após um leve descanso você percebe que tem dois caminhos a seguir, o caminho da esquerda e o da direita')
 
+    return grandePortaAzul
+}
+
+function portaEspadaEscudo(){
+    alert('Você entrou pela porta espada escudo')
+    console.log('Após passar pela porta o grande salão que há pouco tempo estava escuro, derepente se iluminou com as chamas azuladas das tochas na parede, revelando o que havia dentro da sala...')
+    console.log('Ao caminhar um pouco dentro da sala, você sente como se estivesse sendo observado e de repente um estrondo ensurdecedor, logo a sua frente apareceram uma armadura encantada, você sente que havia algo muito valioso ali que elas guardavam.')
+    alert('Você se virou para fugir daquela sala, mas de repente a porta pela qual você acabou de entrar se fechou, a única opção era enfrentar a armadura encantada')
 }
 
 var nome = ''
-var atkJogador = 15
-var defJogador = 10
-var vidaJogador = 30
+var atkJogador = 10
+var defJogador = 8
+var vidaJogador = 20
 
-nome = prompt('Olá jovem aventureiro, me diga qual o seu nome?')
-alert(nome + ' Seja bem vindo a caverna do DRAGÃO... ')
+nome = prompt('Olá bravo jogador, me fale qual o seu nome')
+alert(nome + ' seja bem vindo a Camâra Secreta...')
 
-console.log('Você caiu em um buraco e ao se levantar você se deparou com a seguinte escolha, ao seu lado direito você nota uma porta grande com madeira avermelhada e com aspecto de velha caindo aos pedaços, e ao lado direito você nota um corredor longo e escuro sem conseguir ver o final')
+console.log('Durante mais uma de suas explorações, enquanto andava em uma floresta você se depara com uma caverna descendo pelo chão, com o seu nobre espirito de aventureiro você decidiu adentrar nela')
 
-escolha = prompt('Qual vai ser sua decisão: \n1- você escolhe seguir a direita (porta misteriosa) \n2- você escolhe seguir a esquerda (corredor escuro)')
+console.log('Ao entrar na caverna você se depara com um corredor escuro, conforme você adentrava mais a fundo no corredor a escuridão ia se dicipando, ao final do corredor você se depara com uma grande porta de madeira azul com entalhes brancos e a direita o corredor estreito que dava continuação ao caminho')
+
+escolha = prompt('Qual vai ser sua escolha? \n1- você escolhe ir para frente (grande porta azul) \n2- Você decidi ir pela direita (corredor estreito)')
 
 if (escolha == '1'){
-    item = portaMisteriosa()
-    if (item == 1){
-        atkJogador = atkJogador + 5
-        alert('Ao segurar a espada antiga você sente uma força de vontade percorrendo seu corpo com a sabedoria e destreza de um rei antigo')
-    }else if (item == 2){
-        defJogador = defJogador + 10
-        alert('Ao vestir a armadura, você sente um cosmo entrando em seu corpo')
-    }else if (item == 3){
-        vidaJogador = vidaJogador + 30
-        alert('Ao consumir a poção (Você é no mínimo burro, beber coisas de procedencia duvidosa) você sente como se tivesse ganhado anos de vida a mais')
-    }
-    alert('Você sente sua força aumentando \n\natack: ' + atkJogador + ' \ndefesa: '+ defJogador + '\nvida: ' + vidaJogador)
-    corredorEscuro
+    grandePortaAzul()
 }
 
 if (escolha == '2'){
-    corredorEscuro()
+    espada = corredorEstreito()
+    if (espada == 1){
+        atkJogador = atkJogador + 2
+        alert('Ao pegar a espada em suas maõs você não sente muita diferença, só um cheiro de ferrugem forte')
+    } else if(espada == 2){
+        atkJogador = atkJogador + 0
+        alert('Você ignora a espada e continua o seu caminho (as vezes é melhor não arriscar)')
+    }
+    alert('O cheiro de ferrugem parece ter mudado algo \n\natack: ' + atkJogador + ' \ndefesa: ' + defJogador + '\nvida: ' + vidaJogador)
+
+    console.log('Você empunhou a espada enferrujada e continuou no caminho do corredor')
+    console.log('Ao chegar no final do corredor você se depara com um porta de ferro com um simbolo de um escudo e dos espadas passando por ele, e sente uma senção estranha passar pelo seu corpo')
+
+escolhaPortaEscudo = prompt('Qual vai ser sua escolha? \n1- passar pela porta e descobrir o que tem depois dela \n2- voltar pelo corredor até a grande porta azul')
+
+if (escolhaPortaEscudo == '2'){
+    grandePortaAzul()
+    alert('Você decidiu voltar a porta azul do começo')
 }
 
-atkGolen = 12
-defGolen = 10
-vidaGolen = 20
-
-while (vidaGolen > 0 || vidaJogador > 0 ){
-
-    danoJogador = atkJogador - defGolen
-    if (danoJogador > 0){
-        vidaGolen = vidaGolen - danoJogador
-        alert(nome + ' deu ' + danoJogador + 'de dano no Golen')
-    } else {
-        alert(nome + ' não conseguiu dar dano no Golen')
-    }
-
-    danoGolen = atkGolen - defJogador
-    if (danoGolen > 0){
-        vidaJogador = vidaJogador - danoGolen
-        alert('Golen deu ' + danoGolen + ' de dano no ' + nome)
-    } else {
-        alert('Golen não conseguiu dar dano no ' + nome)
-    }
-
-    if (vidaGolen < 0 || vidaJogador <0) {
-        break
+if (escolhaPortaEscudo == '1'){
+    portaEspadaEscudo()
     }
 }
+
+alert('A batalha se iniciou')
+
+atkArmadura = 5
+defArmadura = 10
+vidaArmadura = 15
+
+while (vidaArmadura > 0 || vidaJogador > 0){
+    danoJogador = atkJogador - defArmadura
+        if (danoJogador > 0){
+            vidaArmadura = vidaArmadura - danoJogador
+            alert(nome + ' deu ' + danoJogador + ' de dano na armadura')
+        }else (nome + ' não conseguiu dar dano na armadura')
+
+    danoArmadura = atkArmadura - defJogador
+        if (danoArmadura > 0){
+            vidaJogador = vidaJogador - danoArmadura
+            alert('armadura deu ' + danoArmadura + ' de dano no ' + nome)
+        }else {
+            alert('Armadura não deu dano no ' + nome)
+            break
+        }
+}
+
 
 </script>
